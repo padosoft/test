@@ -1,0 +1,44 @@
+{
+    "name": "padosoft/@@@data",
+    "description": "@@@description",
+    "keywords" : [@@@keywords
+    ],
+    "homepage":"https://bitbucket.org/padosoft/@@@package/",
+    "license" : "MIT",
+    "authors" : [
+    	{
+    		"name" : "padosoft",
+    		"email" : "helpdesk@padosoft.com",
+    		"homepage" : "https://www.padosoft.com",
+    		"role" : "Developer"
+    	}
+    ],
+	"require": {
+
+    },
+    "require-dev": {
+        "phpunit/phpunit" : "4.*",
+        "scrutinizer/ocular": "~1.1",
+        "league/flysystem-ziparchive": "^1.0.2",
+        "monolog/monolog": "1.*",
+        "luminous/luminous": "^0.7.0",
+        "twbs/bootstrap": "^3.3",
+        "phpmd/phpmd": "2.*",
+        "squizlabs/php_codesniffer": "2.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Padosoft\\@@@package\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Padosoft\\@@@package\\Test\\": "tests"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}
