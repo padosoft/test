@@ -1,4 +1,6 @@
-# PROGETTO TESSERA SANITARIA
+# package-skeleton
+Padosoft Framework agnostic Package Skeleton
+
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
