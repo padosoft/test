@@ -1,9 +1,9 @@
 {
-    "name": "padosoft/@@@data",
-    "description": "@@@description",
-    "keywords" : [@@@keywords
+    "name": "padosoft/test",
+    "description": "classes fot test",
+    "keywords" : ["test"
     ],
-    "homepage":"https://bitbucket.org/padosoft/@@@package/",
+    "homepage":"https://github.org/padosoft/test/",
     "license" : "MIT",
     "authors" : [
     	{
@@ -14,26 +14,20 @@
     	}
     ],
 	"require": {
-
+        "phpunit/phpunit" : "4.*",
+        "guzzlehttp/guzzle": "~6.0"
     },
     "require-dev": {
-        "phpunit/phpunit" : "4.*",
-        "scrutinizer/ocular": "~1.1",
-        "league/flysystem-ziparchive": "^1.0.2",
-        "monolog/monolog": "1.*",
-        "luminous/luminous": "^0.7.0",
-        "twbs/bootstrap": "^3.3",
-        "phpmd/phpmd": "2.*",
-        "squizlabs/php_codesniffer": "2.*"
+
     },
     "autoload": {
         "psr-4": {
-            "Padosoft\\@@@package\\": "src"
+            "Padosoft\\Test\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Padosoft\\@@@package\\Test\\": "tests"
+            "Padosoft\\Test\\Test\\": "tests"
         }
     },
     "extra": {
