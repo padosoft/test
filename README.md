@@ -82,7 +82,3 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 [link-author]: https://github.com/lopadova
 [link-contributors]: ../../contributors
 
-=======
-# TestBase
-Base classes for Testing
->>>>>>> 948e11abbc40674ad407eb7994400d2f37f3d233
