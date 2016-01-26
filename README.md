@@ -53,7 +53,6 @@ If you discover any security related issues, please email :author_email instead 
 # Credits
 
 - [Lorenzo Padovani](https://github.com/lopadova)
-- Raffaele Masi
 - [All contributors](https://github.com/thephpleague/skeleton/contributors)
 
 # About Padosoft
