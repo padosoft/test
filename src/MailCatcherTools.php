@@ -11,17 +11,17 @@ namespace Padosoft\Test;
 
 use GuzzleHttp\Psr7\Response;
 
-class MailTestCase extends TestBase
+trait MailCatcherTools
 {
     protected $mailcatcher;
 
     /**
      *
      */
-    public function setUp()
+    public function getMailCatcher()
     {
-        $this->mailcatcher = new \GuzzleHttp\Client(['base_uri' => env('MAIL_HOST','127.0.0.1').':'.env('MAIL_PORT_WEB','1080')]);
-        parent::setUp();
+        if(!isset($this->mailcatcher)) $this->mailcatcher = new \GuzzleHttp\Client(['base_uri' => env('MAIL_HOST','127.0.0.1').':'.env('MAIL_PORT_WEB','1080')]);
+        return $this->mailcatcher;
     }
 
     /**
