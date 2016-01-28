@@ -18,7 +18,7 @@ trait MailCatcherTools
     /**
      *
      */
-    public function getMailCatcher()
+    protected function getMailCatcher()
     {
         if(!isset($this->mailcatcher)) $this->mailcatcher = new \GuzzleHttp\Client(['base_uri' => env('MAIL_HOST','127.0.0.1').':'.env('MAIL_PORT_WEB','1080')]);
         return $this->mailcatcher;
@@ -29,7 +29,7 @@ trait MailCatcherTools
      */
     public function getAllEmails()
     {
-        $emails = json_decode($this->mailcatcher->get('/messages')->getBody()->getContents(),true);
+        $emails = json_decode($this->getMailCatcher()->get('/messages')->getBody()->getContents(),true);
         if(empty($emails)) {
             $this->fail('No messages returned.');
         }
@@ -42,7 +42,7 @@ trait MailCatcherTools
      */
     public function deleteAllMails()
     {
-        return $this->mailcatcher->delete('/messages');
+        return $this->getMailCatcher()->delete('/messages');
     }
 
     /**
@@ -51,7 +51,7 @@ trait MailCatcherTools
     public function getLastEmailHtml()
     {
         $emailId = $this->getAllEmails()[max(array_keys($this->getAllEmails()))]['id'];
-        return $this->mailcatcher->get("/messages/{$emailId}.html");
+        return $this->getMailCatcher()->get("/messages/{$emailId}.html");
     }
 
     /**
@@ -75,7 +75,7 @@ trait MailCatcherTools
     {
         //return $this->getAllEmails()[0];
         $emailId = $this->getAllEmails()[max(array_keys($this->getAllEmails()))]['id'];
-        return $this->mailcatcher->get("/messages/{$emailId}.json");
+        return $this->getMailCatcher()->get("/messages/{$emailId}.json");
 
     }
 
