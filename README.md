@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # TestBase
 Base classes for Testing
 
@@ -17,7 +17,7 @@ Base classes for Testing
 Table of Contents
 =================
 
-  * [PROGETTO ******](#progetto-******)
+  * [PROGETTO test](#progetto-test)
   * [Table of Contents](#table-of-contents)
   * [PREREQUISITI](#prerequisiti)
 
@@ -48,11 +48,11 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) and [CONDUCT](CONDUCT.md) for details
 
 # Security
 
-If you discover any security related issues, please email :author_email instead of using the issue tracker.
+If you discover any security related issues, please email  instead of using the issue tracker.
 
 # Credits
 
-- [Lorenzo Padovani](https://github.com/lopadova)
+- [Padosoft](https://github.com/padosoft)
 - [All contributors](https://github.com/thephpleague/skeleton/contributors)
 
 # About Padosoft
@@ -62,22 +62,22 @@ Padosoft is a software house based in Florence, Italy. Specialized in E-commerce
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
-[ico-version]: https://img.shields.io/packagist/v/padosoft/@@@package.svg?style=flat-square
+[ico-version]: https://img.shields.io/packagist/v/padosoft/test.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/padosoft/@@@package/master.svg?style=flat-square
-[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/padosoft/@@@package.svg?style=flat-square
-[ico-code-quality]: https://img.shields.io/scrutinizer/g/padosoft/@@@package.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/padosoft/@@@package.svg?style=flat-square
-[ico-sensiolab]: https://insight.sensiolabs.com/projects/******/small.png
-[ico-hhvm-status]: http://hhvm.h4cc.de/badge/padosoft/@@@package.svg?style=flat
+[ico-travis]: https://img.shields.io/travis/padosoft/test/master.svg?style=flat-square
+[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/padosoft/test.svg?style=flat-square
+[ico-code-quality]: https://img.shields.io/scrutinizer/g/padosoft/test.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/padosoft/test.svg?style=flat-square
+[ico-sensiolab]: https://insight.sensiolabs.com/projects/@@@sensiolabs/small.png
+[ico-hhvm-status]: http://hhvm.h4cc.de/badge/padosoft/test.svg?style=flat
 
-[link-packagist]: https://packagist.org/packages/padosoft/@@@package
-[link-travis]: https://travis-ci.org/padosoft/@@@package
-[link-scrutinizer]: https://scrutinizer-ci.com/g/padosoft/@@@package/code-structure
-[link-code-quality]: https://scrutinizer-ci.com/g/padosoft/@@@package
-[link-downloads]: https://packagist.org/packages/padosoft/@@@package
-[link-sensiolab]: https://insight.sensiolabs.com/projects/******
-[link-hhvm-status]: http://hhvm.h4cc.de/package/padosoft/@@@package
+[link-packagist]: https://packagist.org/packages/padosoft/test
+[link-travis]: https://travis-ci.org/padosoft/test
+[link-scrutinizer]: https://scrutinizer-ci.com/g/padosoft/test/code-structure
+[link-code-quality]: https://scrutinizer-ci.com/g/padosoft/test
+[link-downloads]: https://packagist.org/packages/padosoft/test
+[link-sensiolab]: https://insight.sensiolabs.com/projects/@@@sensiolabs
+[link-hhvm-status]: http://hhvm.h4cc.de/package/padosoft/test
 [link-author]: https://github.com/lopadova
 [link-contributors]: ../../contributors
 
