@@ -66,5 +66,87 @@ trait GuzzleMockTools
          $this->addTransferException($mock);
          $this->addRuntimeException($mock);
     }
-    
+
+    public function createClientWithAllExceptionMock($method) {
+
+        $mock = new MockHandler();
+        $this->addAllException($method, $mock);
+        $handler = HandlerStack::create($mock);
+        return  new Client(['handler' => $handler]);
+
+    }
+
+    public function createClientExceptionMock($method) {
+
+        $mock = new MockHandler();
+        $this->addClientException($method, $mock);
+        $handler = HandlerStack::create($mock);
+        return  new Client(['handler' => $handler]);
+
+    }
+
+    public function createServerExceptionMock($method) {
+
+        $mock = new MockHandler();
+        $this->addServerException($method, $mock);
+        $handler = HandlerStack::create($mock);
+        return  new Client(['handler' => $handler]);
+
+    }
+
+    public function createBadResponseExceptionMock($method) {
+
+        $mock = new MockHandler();
+        $this->addBadResponseException($method, $mock);
+        $handler = HandlerStack::create($mock);
+        return  new Client(['handler' => $handler]);
+
+    }
+
+    public function createConnectExceptionMock($method) {
+
+        $mock = new MockHandler();
+        $this->addConnectException($method, $mock);
+        $handler = HandlerStack::create($mock);
+        return  new Client(['handler' => $handler]);
+
+    }
+
+    public function createTooManyRedirectsExceptionMock($method) {
+
+        $mock = new MockHandler();
+        $this->addTooManyRedirectsException($method, $mock);
+        $handler = HandlerStack::create($mock);
+        return  new Client(['handler' => $handler]);
+
+    }
+
+    public function createRequestExceptionMock($method) {
+
+        $mock = new MockHandler();
+        $this->addRequestException($method, $mock);
+        $handler = HandlerStack::create($mock);
+        return  new Client(['handler' => $handler]);
+
+    }
+
+    public function createTransferExceptionMock($method) {
+
+        $mock = new MockHandler();
+        $this->addTransferException($mock);
+        $handler = HandlerStack::create($mock);
+        return  new Client(['handler' => $handler]);
+
+    }
+
+    public function createRuntimeExceptionnMock($method) {
+
+        $mock = new MockHandler();
+        $this->addTransferException($mock);
+        $handler = HandlerStack::create($mock);
+        return  new Client(['handler' => $handler]);
+
+    }
+
+
 }
