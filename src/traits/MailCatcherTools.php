@@ -7,7 +7,7 @@
  * Time: 12:37
  */
 
-namespace Padosoft\Test;
+namespace Padosoft\Test\traits;
 
 use GuzzleHttp\Psr7\Response;
 
