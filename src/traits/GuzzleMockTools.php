@@ -5,23 +5,26 @@
 
 namespace Padosoft\Test\traits;
 
-use \GuzzleHttp\Handler\MockHandler;
-use \GuzzleHttp\Psr7\Response;
-use \GuzzleHttp\Psr7\Request;
-use \GuzzleHttp\HandlerStack;
-use \GuzzleHttp\Exception;
-use \GuzzleHttp\Exception\ClientException;
-use \GuzzleHttp\Exception\RequestException;
-use \GuzzleHttp\Exception\BadResponseException;
-use \GuzzleHttp\Exception\ServerException;
-use \GuzzleHttp\Exception\TooManyRedirectsException;
-use \GuzzleHttp\Exception\ConnectException;
-use \GuzzleHttp\Exception\TransferException;
+use GuzzleHttp\Client;
+use GuzzleHttp\Handler\MockHandler;
+use GuzzleHttp\Psr7\Response;
+use GuzzleHttp\Psr7\Request;
+use GuzzleHttp\HandlerStack;
+use GuzzleHttp\Exception;
+use GuzzleHttp\Exception\ClientException;
+use GuzzleHttp\Exception\RequestException;
+use GuzzleHttp\Exception\BadResponseException;
+use GuzzleHttp\Exception\ServerException;
+use GuzzleHttp\Exception\TooManyRedirectsException;
+use GuzzleHttp\Exception\ConnectException;
+use GuzzleHttp\Exception\TransferException;
 
 trait GuzzleMockTools
 {
 
-
+    public function addResponse($status = 200,array $headers = [],$body = null,\GuzzleHttp\Handler\MockHandler $mock) {
+        $mock->append(new Response($status, $headers,$body));
+    }
 
     public function addClientException($method, \GuzzleHttp\Handler\MockHandler $mock) {
         $mock->append(new ClientException("Client error",new Request($method, 'test'),new Response(400, []),null,[]));
@@ -65,6 +68,15 @@ trait GuzzleMockTools
          $this->addRequestException($method, $mock);
          $this->addTransferException($mock);
          $this->addRuntimeException($mock);
+    }
+
+    public function createResponse($status = 200,array $headers = [],$body = null) {
+
+        $mock = new MockHandler();
+        $this->addResponse($status ,$headers ,$body , $mock);
+        $handler = HandlerStack::create($mock);
+        return  new Client(['handler' => $handler]);
+
     }
 
     public function createClientWithAllExceptionMock($method) {
@@ -142,7 +154,7 @@ trait GuzzleMockTools
     public function createRuntimeExceptionnMock($method) {
 
         $mock = new MockHandler();
-        $this->addTransferException($mock);
+        $this->addRuntimeException($mock);
         $handler = HandlerStack::create($mock);
         return  new Client(['handler' => $handler]);
 
