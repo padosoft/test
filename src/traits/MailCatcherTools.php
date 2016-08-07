@@ -16,11 +16,19 @@ trait MailCatcherTools
     protected $mailcatcher;
 
     /**
-     *
+     * @return \GuzzleHttp\Client
      */
     protected function getMailCatcher()
     {
-        if(!isset($this->mailcatcher)) $this->mailcatcher = new \GuzzleHttp\Client(['base_uri' => env('MAIL_HOST','127.0.0.1').':'.env('MAIL_PORT_WEB','1080')]);
+        $host = env('MAIL_HOST','http://127.0.0.1');
+        if(substr( $host, 0, 7 ) != 'http://'){
+            $host = 'http://'.$host;
+        }
+        $port = env('MAIL_PORT_WEB','1080');
+        if(!is_numeric($port)){
+            $port = 1080;
+        }
+        if(!isset($this->mailcatcher)) $this->mailcatcher = new \GuzzleHttp\Client(['base_uri' => $host.':'.$port]);
         return $this->mailcatcher;
     }
 
