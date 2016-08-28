@@ -2,7 +2,13 @@
 
 All Notable changes to `test` will be documented in this file
 
-## 1.0.0 - 11/02/2016
+## 0.2.1 - 2016-08-28
 
-### Added
-- Initial release
+- Update composer.json
+
+## 0.2.0 - 2016-08-28
+
+- ADD ReflectionTestable , ExceptionTestable, FileSystemTestable Traits
+- ADD support for php>=7.0.0
+- REMOVE support for php<7.0
+- CHANGE TestBase now use ReflectionTestable , ExceptionTestable, FileSystemTestable traits by default.
