@@ -6,10 +6,11 @@ trait FileSystemTestable
 {
     /**
      * Remove created path during test
+     * @param $baseDir
      */
-    protected function initFileAndPath()
+    protected function initFileAndPath($baseDir)
     {
-        $dir = __DIR__ . '/resources/';
+        $dir = $baseDir . '/resources/';
         if (!is_dir($dir)) {
             mkdir($dir, '0777', true);
         }
@@ -24,7 +25,7 @@ trait FileSystemTestable
             file_put_contents($file, 'dummy;');
         }
 
-        $dir = __DIR__ . '/resources/subdir/';
+        $dir = $baseDir . '/resources/subdir/';
         if (!is_dir($dir)) {
             mkdir($dir, '0777', true);
         }
@@ -37,30 +38,31 @@ trait FileSystemTestable
 
     /**
      * Remove created path during test
+     * @param $baseDir
      */
-    protected function removeCreatedPathDuringTest()
+    protected function removeCreatedPathDuringTest($baseDir)
     {
-        if (is_dir(__DIR__ . '/pippo.txt')) {
-            rmdir(__DIR__ . '/pippo.txt');
+        if (is_dir($baseDir . '/pippo.txt')) {
+            rmdir($baseDir . '/pippo.txt');
         }
-        if (is_dir(__DIR__ . '/dummy/')) {
-            rmdir(__DIR__ . '/dummy/');
+        if (is_dir($baseDir . '/dummy/')) {
+            rmdir($baseDir . '/dummy/');
         }
-        if (file_exists(__DIR__ . '/resources/new/dummy.txt')) {
-            unlink(__DIR__ . '/resources/new/dummy.txt');
+        if (file_exists($baseDir . '/resources/new/dummy.txt')) {
+            unlink($baseDir . '/resources/new/dummy.txt');
         }
-        if (is_dir(__DIR__ . '/resources/new/')) {
-            rmdir(__DIR__ . '/resources/new/');
+        if (is_dir($baseDir . '/resources/new/')) {
+            rmdir($baseDir . '/resources/new/');
         }
-        if (file_exists(__DIR__ . '/resources/new2/dummy.txt')) {
-            unlink(__DIR__ . '/resources/new2/dummy.txt');
+        if (file_exists($baseDir . '/resources/new2/dummy.txt')) {
+            unlink($baseDir . '/resources/new2/dummy.txt');
         }
-        if (is_dir(__DIR__ . '/resources/new2/')) {
-            rmdir(__DIR__ . '/resources/new2/');
+        if (is_dir($baseDir . '/resources/new2/')) {
+            rmdir($baseDir . '/resources/new2/');
         }
 
         /*
-        $dir = __DIR__ . '/resources/subdir/';
+        $dir = $baseDir . '/resources/subdir/';
 
         $file = $dir . 'dummy.txt';
         if (file_exists($file)) {
@@ -70,7 +72,7 @@ trait FileSystemTestable
             rmdir($dir);
         }
 
-        $dir = __DIR__ . '/resources/';
+        $dir = $baseDir . '/resources/';
 
         $file = $dir . 'dummy.txt';
         if (file_exists($file)) {

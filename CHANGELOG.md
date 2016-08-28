@@ -2,6 +2,10 @@
 
 All Notable changes to `test` will be documented in this file
 
+## 0.2.2 - 2016-08-28
+
+- CHANGE FileSystemTestable trait constructor now accept a directory base. 
+
 ## 0.2.1 - 2016-08-28
 
 - Update composer.json
