@@ -14,11 +14,11 @@
     	}
     ],
 	"require": {
-        "phpunit/phpunit" : "^4.0|^5.0",
-        "guzzlehttp/guzzle": "~6.0"
+        "phpunit/phpunit" : "^4.0|^5.0|^6.5.14|^7.5.20|^8.5.26|^9.5.20",
+        "guzzlehttp/guzzle": "~6.0|^7.4.2"
     },
     "require-dev": {
-
+        "roave/security-advisories": "dev-latest"
     },
     "autoload": {
         "psr-4": {
